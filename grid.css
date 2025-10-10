@@ -1,0 +1,31 @@
+.con{
+    display:grid;
+    grid-template-columns:auto auto auto;
+    padding:10px;
+    row-gap:10px;
+    column-gap:10px;
+}
+.con div{
+    background-color:lightgreen;
+    text-align:center;
+    padding:20px 0;
+    font-size:30px;
+    border:2px solid black;
+}
+ .one{
+    grid-column:1/4;
+    background-color:lightcoral;
+}
+  
+.two{
+    grid-row:2/4;
+    background-color:lightblue;
+}
+.six{
+    grid-column:1/4;
+    background-color:lightpink;
+}
+.three{
+    grid-column:2/4;
+    background-color:lightyellow;
+}   
