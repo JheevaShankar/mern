@@ -2,6 +2,11 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
+const path = require("path");
+
+dotenv.config({ path: path.join(__dirname, '.env') });
+
+console.log("JWT_SECRET loaded:", process.env.JWT_SECRET ? "Yes" : "No");
 
 app.use(express.json());
 
@@ -18,6 +23,7 @@ mongoose.connect("mongodb+srv://jheeva2005_db_user:admin07@cluster0.f909w45.mong
     console.log(err);
 });
 app.use('/api/auth', require('./routes/authRoutes'));
+app.use('/api', require('./routes/authRoutes'));
 app.get("/api", (req, res) => {
     res.send("Hello World!");
 });
